@@ -33,7 +33,7 @@ int main(void)
         else
             TurnOn_Launchpad_LED1();
 
-        for (i=0;i<120000;i++);
+        for (i=0;i<480000;i++);
         Toggle_Launchpad_Green_LED2();
 
     }

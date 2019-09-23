@@ -43,7 +43,7 @@ int main(void)
             Toggle_Launchpad_Green_LED2();
 
             // since the timer is in one-shot mode, we have to restart it to get a periodic behavior
-            Timer32_setCount(TIMER32_0_BASE, HALF_SEC_COUNT);
+            Timer32_setCount(TIMER32_0_BASE, TWO_SEC_COUNT);
             Timer32_startTimer(TIMER32_0_BASE, true);
         }
     }
@@ -73,7 +73,7 @@ void initialize()
                        TIMER32_PRESCALER_1, // The prescaler value is 1; The clock is not divided before feeding the counter
                        TIMER32_32BIT, // The counter is used in 32-bit mode; the alternative is 16-bit mode
                        TIMER32_PERIODIC_MODE); //This options is irrelevant for a one-shot timer
-    Timer32_setCount(TIMER32_0_BASE, HALF_SEC_COUNT);  // The count related to the period of the timer
+    Timer32_setCount(TIMER32_0_BASE, TWO_SEC_COUNT);  // The count related to the period of the timer
     Timer32_startTimer(TIMER32_0_BASE, true); // start the timer in one-shot mode. This means the timer stops when it reaches 0
 
 }
